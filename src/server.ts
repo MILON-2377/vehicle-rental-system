@@ -2,7 +2,7 @@ import app from "./app";
 import config from "./config";
 import pool from "./db";
 
-const port = config.port || 5000;
+const port = config.port || 8080;
 
 const startServer = async () => {
   try {
