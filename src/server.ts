@@ -14,8 +14,6 @@ const startServer = async () => {
   }
 };
 
-app.listen(port, () => {
-  console.log(`Server is running on ${port}`);
-});
-
 startServer();
+
+export default app;
