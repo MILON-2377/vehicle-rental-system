@@ -52,8 +52,12 @@ export default class ApiResponse<T> {
     return new ApiResponse<T>(201, { data, message });
   }
 
-  static noContent() {
-    return new ApiResponse(204, {});
+  static deleted(message = "Content deleted successfully") {
+    return new ApiResponse(200, { message });
+  }
+
+  static noContent(message="No contend found") {
+    return new ApiResponse(204, {message});
   }
 
   static badRequest(message = "Bad Request") {
@@ -70,5 +74,12 @@ export default class ApiResponse<T> {
 
   static notFound(message = "Not found") {
     return new ApiResponse(404, { message });
+  }
+
+  static custom(status: number, message = "Something went wrong", errors?: any) {
+    return new ApiResponse(status, {
+      message,
+      errors,
+    });
   }
 }

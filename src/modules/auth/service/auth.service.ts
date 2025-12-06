@@ -1,13 +1,6 @@
 import bcrypt from "bcrypt";
 import pool from "../../../db";
-
-interface ISignUpUser {
-  name: string;
-  email: string;
-  password: string;
-  phone: string;
-  role: "customer" | "admin";
-}
+import ISignUpUser from "../types/auth.types";
 
 export default class AuthService {
   // Hanshing Pasword

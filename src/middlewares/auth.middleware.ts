@@ -44,6 +44,7 @@ export default class Authenticate {
       }
 
       req.user = {
+        userId: verifiedPayload.userId,
         email: verifiedPayload.email,
         name: verifiedPayload.name,
         role: verifiedPayload.role,

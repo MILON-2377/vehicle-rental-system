@@ -16,7 +16,7 @@ export default class AuthController {
   // Jwt sign in
   private static jwtSign = (jwtPayload: IJwtPayload) => {
     return jwt.sign(jwtPayload, config.jwt_secret as string, {
-      expiresIn: "1h",
+      expiresIn: "1d",
     });
   };
 
@@ -108,6 +108,7 @@ export default class AuthController {
       }
 
       const payload: IJwtPayload = {
+        userId: user.rows[0].id,
         name: user.rows[0].name,
         email: user.rows[0].email,
         role: user.rows[0].role,
