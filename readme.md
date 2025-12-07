@@ -66,7 +66,6 @@ https://vehicle-rental-system-rust.vercel.app
 
 ## Vehicle Endpoints
 | Method | Endpoint | Access | Description |
-
 |--------|----------|--------|-------------|
 | POST | /api/v1/vehicles | Admin only | Add new vehicle |
 | GET | /api/v1/vehicles | Public | View all vehicles |
