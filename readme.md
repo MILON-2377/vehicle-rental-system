@@ -58,38 +58,43 @@ https://vehicle-rental-system-rust.vercel.app
 
 ## Authentication Endpoints
 
-    Method    | Endpoint      |Access   |Description
-    POST | /api/v1/auth/signup | Public | Register new user
-    POST | /api/v1/auth/signin | Public | Login & get JWT token
+    | Method | Endpoint | Access | Description |
+    |--------|----------|--------|-------------|
+    | POST | /api/v1/auth/signup | Public | Register new user |
+    | POST | /api/v1/auth/signin | Public | Login & get JWT token |
 
 ---
 
 ## Vehicle Endpoints
 
-    Method | Endpoint | Access | Description
-    POST | /api/v1/vehicles | Admin only |	Add new vehicle
-    GET	| /api/v1/vehicles | Public | View all vehicles
-    GET | /api/v1/vehicles/:vehicleId |	Public | Vehicle details
-    PUT | /api/v1/vehicles/:vehicleId | Admin only | Update vehicle
-    DELETE | /api/v1/vehicles/:vehicleId |	Admin only | Delete vehicle (if no active bookings)
+    | Method | Endpoint | Access | Description |
+
+    |--------|----------|--------|-------------|
+    | POST | /api/v1/vehicles | Admin only | Add new vehicle |
+    | GET | /api/v1/vehicles | Public | View all vehicles |
+    | GET | /api/v1/vehicles/:vehicleId | Public | Vehicle details |
+    | PUT | /api/v1/vehicles/:vehicleId | Admin only | Update vehicle |
+    | DELETE | /api/v1/vehicles/:vehicleId | Admin only | Delete vehicle (if no active bookings) |
 
 ---
 
 ## User Endpoints
 
-    Method | Endpoint | Access | Description
-    GET | /api/v1/users | Admin only | View all users
-    PUT | /api/v1/users/:userId | Admin/User | Admin: update any user, User: update self
-    DELETE | /api/v1/users/:userId | Admin only | Delete user (if no active bookings)
+    | Method | Endpoint              | Access       | Description                                      |
+    | ------ | --------------------- | ------------ | ------------------------------------------------ |
+    | GET    | /api/v1/users         | Admin only   | View all users                                   |
+    | PUT    | /api/v1/users/:userId | Admin or Own | Admin: update any user, User: update own profile |
+    | DELETE | /api/v1/users/:userId | Admin only   | Delete user (if no active bookings)              |
 
 ---
 
 ## Booking Endpoints
 
-    Method | Endpoint | Access | Description
-    POST | /api/v1/bookings | User/Admin | Create booking, validate availability, calculate price, mark vehicle as booked
-    GET | /api/v1/bookings | Role-based | Admin: All bookings, User: Own bookings
-    PUT | /api/v1/bookings/:bookingId |Role-based | User: Cancel (only before start date), Admin: Mark returned
+    | Method | Endpoint | Access | Description |
+    |--------|----------|--------|-------------|
+    | POST | /api/v1/bookings | Customer or Admin | Create booking, validate availability, calculate price |
+    | GET | /api/v1/bookings | Role-based | Admin: all bookings, User: own bookings |
+    | PUT | /api/v1/bookings/:bookingId | Role-based | User: cancel before start, Admin: mark returned |
 
 ---
 
